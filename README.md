@@ -1,2 +1,2 @@
-# Dragon-AGE-RPG-Portugu-s-
+# Dragon-AGE-RPG-Português-
 Ficha Dragon Ageem Português Brasileiro
