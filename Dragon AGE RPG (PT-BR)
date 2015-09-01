@@ -86,7 +86,7 @@
                 <tr>
                     <td class="sheet-blackbox">
                         <div>
-                            <button class="sheet-skillbuttons" type='roll' value='/roll 3d6 + @{astúcia} + @{astúcia_foco}' name='roll_teste_de_astúcia'/></button>
+                            <button class="sheet-skillbuttons" type='roll' value='/em Teste de Astúcia [[3d6 + @{astúcia} + @{astúcia_foco}]]' name='roll_teste_de_astúcia'/></button>
                             ASTÚCIA
                             <input type="checkbox" title="Habilidade Primária" name="attr_habilidade_primária_astúcia"/>
                         </div>
@@ -404,30 +404,30 @@
                     <table class="sheet-weaponstable">
                         <tr>
                             <td>
-                                <input type="text" class="sheet-weaponnametext" name="attr_Weapon_Name" placeholder="Weapon"/>
+                                <input type="text" class="sheet-weaponnametext" name="attr_nome_da_arma" placeholder="Arma"/>
                             </td>
                             <td>
-                                <input type="text" class="sheet-weaponatacktext" name="attr_Weapon_Attack" value="0"/>
+                                <input type="text" class="sheet-weaponatacktext" name="attr_ataque_da_arma" value="0"/>
                             </td>
                             <td>
-                                <button type='roll' value='/em @{character_name} uses your @{Weapon_Name} to attack: [[3d6 + (@{Weapon_Attack})]]' name='roll_Weapon_Attack_Check'/></button>
+                                <button type='roll' value='/em @{character_name} usa @{nome_da_arma} para atacar: [[3d6 + (@{ataque_da_arma})]]' name='roll_rolagem_de_ataque'/></button>
                             </td>
                             <td>
-                                <input type="text" class="sheet-weaponrangetext" name="attr_Weapon_Short_Range" placeholder="0" title="Short Range"/>
+                                <input type="text" class="sheet-weaponrangetext" name="attr_alcance_curto" placeholder="0" title="Alcance Curto"/>
                             </td>
                             <td>
-                                <input type="text" class="sheet-weaponrangetext" name="attr_Weapon_Long_Range" placeholder="0" title="Long Range"/>
+                                <input type="text" class="sheet-weaponrangetext" name="attr_alcance_longo" placeholder="0" title="Alcance Longo"/>
                             </td>
                             <td>
-                                <input type="text" class="sheet-weapondamagetext" name="attr_Weapon_Damage" placeholder="dices"/>
+                                <input type="text" class="sheet-weapondamagetext" name="attr_dano_da_arma" placeholder="xdx+x"/>
                             </td>
                             <td>
-                                <button type='roll' value='/em @{character_name} does [[ @{Weapon_Damage}]] for Damage with @{Weapon_Name}' name='roll_Weapon_Damage_Check'/></button>
+                                <button type='roll' value='/em @{character_name} causa [[ @{dano_da_arma}]] de Dano com @{nome_da_arma}' name='roll_rolagem_de_dano'/></button>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="7" class="borderall">
-                                <textarea class="sheet-weapondetails" name="attr_Weapon_Details" placeholder="Weapon Specs"></textarea>
+                                <textarea class="sheet-weapondetails" name="attr_detalhes_da_arma" placeholder="Detalhes..."></textarea>
                             </td>
                         </tr>
                     </table>
@@ -435,7 +435,7 @@
                 <table>
                     <tr class="sheet-borderall">
                         <td>
-                            <textarea class="sheet-weaponstype" name="attr_Weapon_Groups" placeholder="Weapon Groups"></textarea>
+                            <textarea class="sheet-weaponstype" name="attr_grupo_de_armas" placeholder="Grupo de Armas"></textarea>
                         </td>
                     </tr>
                 </table>
@@ -446,7 +446,7 @@
         <table class="sheet-ammotable">
             <tr>
                 <td colspan="4" class="blackbox_alternate">
-                    Ammo Counter
+                    MUNIÇÃO
                 </td>
             </tr>
             <tr>
@@ -454,27 +454,27 @@
                     Total
                 </td>
                 <td class="blackbox_alternate2" >
-                    Used
+                    Usada
                 </td>
                 <td class="blackbox_alternate2" >
-                    Type
+                    Tipo
                 </td>
                 <td class="blackbox_alternate2" >
-                    Weapon
+                    Arma
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="number" class="sheet-ammotext" name="attr_Ammo_Total_Display"/>
+                    <input type="number" class="sheet-ammotext" name="attr_munição_total_display"/>
                 </td>
                 <td>
-                    <input type="Number" class="sheet-ammotext" name="attr_Ammo_Used_Display" value="@{Ammo_Display_Total}" />
+                    <input type="Number" class="sheet-ammotext" name="attr_munição_usada_display" value="@{munição_total_display}" />
                 </td>
                 <td>
-                    <input type="text" class="sheet-ammotypetext" name="attr_Ammo_Type_Display"/>
+                    <input type="text" class="sheet-ammotypetext" name="attr_tipo_de_munição_display"/>
                 </td>
                 <td>
-                    <input type="text" class="sheet-ammotypetext" name="attr_Ammo_Weapon_Display"/>
+                    <input type="text" class="sheet-ammotypetext" name="attr_arma_display"/>
                 </td>
             </tr>
         </table>
@@ -482,16 +482,16 @@
             <table class="sheet-ammotable">
             <tr>
                 <td>
-                    <input type="number" class="sheet-ammotext" name="attr_Ammo_Total"/>
+                    <input type="number" class="sheet-ammotext" name="attr_munição_total"/>
                 </td>
                 <td>
-                    <input type="Number" class="sheet-ammotext" name="attr_Ammo_Used" value="@{Ammo_Display}" />
+                    <input type="Number" class="sheet-ammotext" name="attr_munição_usada" value="@{munição_total}" />
                 </td>
                 <td>
-                    <input type="text" class="sheet-ammotypetext" name="attr_Ammo"/>
+                    <input type="text" class="sheet-ammotypetext" name="attr_tipo_de_munição"/>
                 </td>
                 <td>
-                    <input type="text" class="sheet-ammotypetext" name="attr_Ammo_Weapon"/>
+                    <input type="text" class="sheet-ammotypetext" name="attr_arma"/>
                 </td>
             </tr>
         </table>
@@ -501,13 +501,13 @@
         <table>
             <tr>
                 <td class="blackbox_alternate2">
-                    CLASS POWERS AND SPELLS
+                    PODERES DE CLASSE & FEITIÇOS
                 </td>
             </tr>
             <tr>
                 <td class="spellbox">
-                    <div class="circularhome"><textarea class="sheet-powerstext" name="attr_Powers"></textarea>
-                        <div class="circulartextbox"><input class="circulartext" type="number" name="attr_ManaRep" value="@{Mana}" disabled="true"/><p class="circularp">MANA</p></div>
+                    <div class="circularhome"><textarea class="sheet-powerstext" name="attr_poderes_de_classe_e_feitiços" placeholder="Para Consulta Rápida"></textarea>
+                        <div class="circulartextbox"><input class="circulartext" type="number" name="attr_manarep" value="@{mana}" disabled="true"/><p class="circularp">MANA</p></div>
                     </div>
                 </td>
             </tr>
@@ -517,12 +517,12 @@
         <table>
             <tr>
                 <td class="blackbox_alternate2">
-                    TALENTS AND LANGUAGES
+                    TALENTOS & IDIOMAS
                 </td>
             </tr>
             <tr>
                 <td class="spellbox">
-                    <textarea class="sheet-powerstext" name="attr_Talents"></textarea>
+                    <textarea class="sheet-powerstext" name="attr_talentos_e_idiomas" placeholder="Para Consulta Rápida"></textarea>
                 </td>
             </tr>
         </table>
@@ -536,43 +536,43 @@
         <table class="sheet-2ndstattable">
             <tbody>
                 <tr>
-                    <td class="sheet-blackbox_alternate" colspan="2"> DEFENSE</td>
-                    <td class="sheet-blackbox_alternate">ARMOR</td>
-                    <td class="sheet-blackbox_alternate" colspan="2">SPEED</td>
-                    <td class="sheet-blackbox_alternate">HEALTH</td>
+                    <td class="sheet-blackbox_alternate" colspan="2"> DEFESA</td>
+                    <td class="sheet-blackbox_alternate">ARMADURA</td>
+                    <td class="sheet-blackbox_alternate" colspan="2">VELOCIDADE</td>
+                    <td class="sheet-blackbox_alternate">SAÚDE</td>
                     <td class="sheet-blackbox_alternate">MANA</td>
-                    <td class="sheet-blackbox_alternate">SPELLPOWER</td>
+                    <td class="sheet-blackbox_alternate">PODER DE FEITIÇO</td>
                 </tr>
                 <tr>
-                    <td class="sheet-2ndstatbox" colspan="2"><input class="sheet-2nd_statstextbox" type="text" name="attr_Defense" value="0"/></td>
-                    <td class="sheet-2ndstatbox"><input class="sheet-2nd_statstextbox" type="text" name="attr_Armor"/></td>
-                    <td class="sheet-2ndstatbox" colspan="2"><input class="sheet-2nd_statstextbox" type="text" name="attr_Speed"/></td>
-                    <td class="sheet-2ndstatbox"><input class="sheet-2nd_statstextbox" type="text" name="attr_Health"/></td>
-                    <td class="sheet-2ndstatbox"><input class="sheet-2nd_statstextbox" type="text" name="attr_Mana"/></td>
-                    <td class="sheet-2ndstatbox"><input class="sheet-2nd_statstextbox" type="number" name="attr_Spellpower" value="10 + @{Magic} + @{Magic_Focus}" disabled/></td>
+                    <td class="sheet-2ndstatbox" colspan="2"><input class="sheet-2nd_statstextbox" type="text" name="attr_defesa" value="0"/></td>
+                    <td class="sheet-2ndstatbox"><input class="sheet-2nd_statstextbox" type="text" name="attr_armadura"/></td>
+                    <td class="sheet-2ndstatbox" colspan="2"><input class="sheet-2nd_statstextbox" type="text" name="attr_velocidade"/></td>
+                    <td class="sheet-2ndstatbox"><input class="sheet-2nd_statstextbox" type="text" name="attr_saúde"/></td>
+                    <td class="sheet-2ndstatbox"><input class="sheet-2nd_statstextbox" type="text" name="attr_mana"/></td>
+                    <td class="sheet-2ndstatbox"><input class="sheet-2nd_statstextbox" type="number" name="attr_poder_do_feitiço" value="10 + @{magia} + @{foco_utilizado}" disabled/></td>
                 </tr>
                 <tr>
-                    <td> Total <br> <input class="sheet-otherinput" type="number" name="attr_Defense-Total" disabled="true" value="@{Shield} + @{Defense}"/></td>
-                    <td> Shield <br> <input class="sheet-otherinput" type="text" name="attr_Shield" value="0"/></td>
-                    <td> Penalty <br> <input class="sheet-otherinput" type="text" name="attr_Armor_Penalty" value="0"/></td>
-                    <td> Charge <br> <input class="sheet-otherinput" type="number" name="attr_Charge" disabled="true" value="floor (@{Speed}/2)"/></td>
-                    <td> Run <br> <input class="sheet-otherinput" type="number" name="attr_Run" disabled="true" value="@{Speed}*2"/></td>
-                    <td> Total <br> <input class="sheet-otherinput" type="text" name="attr_Health-Total" value="0"/></td>
-                    <td> Total <br> <input class="sheet-otherinput" type="text" name="attr_Mana-Total" value="0"/></td>
-                    <td> FOCUS <br>
-                        <select class="sheet-spellselect" name="attr_Magic_Focus">
+                    <td> Total <br> <input class="sheet-otherinput" type="number" name="attr_defesa_total" disabled="true" value="@{escudo} + @{defesa}"/></td>
+                    <td> Escudo <br> <input class="sheet-otherinput" type="text" name="attr_escudo" value="0"/></td>
+                    <td> Penalidade <br> <input class="sheet-otherinput" type="text" name="attr_penalidade_da_armadura" value="0"/></td>
+                    <td> Carga <br> <input class="sheet-otherinput" type="number" name="attr_carga" disabled="true" value="floor (@{velocidade}/2)"/></td>
+                    <td> Corrida <br> <input class="sheet-otherinput" type="number" name="attr_corrida" disabled="true" value="@{velocidade}*2"/></td>
+                    <td> Total <br> <input class="sheet-otherinput" type="text" name="attr_saúde_total" value="0"/></td>
+                    <td> Total <br> <input class="sheet-otherinput" type="text" name="attr_mana_total" value="0"/></td>
+                    <td> Foco Utilizado <br>
+                        <select class="sheet-spellselect" name="attr_foco_utilizado">
                             <option value="0">None</option>
-                            <option value="@{Arcane_Lance}">Arcane Lance</option>
-                            <option value="@{Creation}">Creation</option>
-                            <option value="@{Entropy}">Entropy</option>
-                            <option value="@{Primal}">Primal</option>
-                            <option value="@{Spirit}">Spirit</option>
+                            <option value="@{criação}">Criação</option>
+                            <option value="@{entropia}">Entropia</option>
+                            <option value="@{espírito}">Espírito</option>
+                            <option value="@{lança_arcana}">Lança Arcana</option>
+                            <option value="@{primal}">Primal</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="8">
-                        <input type="text" class="sheet-armortypetextarea" name="attr_Armor_Type" placeholder="ARMOR TYPE"/>
+                        <input type="text" class="sheet-armortypetextarea" name="attr_tipo_de_armadura" placeholder="Tipo de Armadura"/>
                     </td>
                 </tr>
             </tbody>
@@ -582,24 +582,24 @@
         <table class="sheet-spelltable">
             <tr>
                 <td class="sheet-blackbox_alternate" colspan="5">
-                    MAGIC FOCUSES
+                    FOCOS DE MAGIA
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" name="attr_Creation" value="2"/> Creation
+                    <input type="checkbox" name="attr_criação" value="2"/> Criação
                 </td>
                 <td>
-                    <input type="checkbox" name="attr_Entropy" value="2"/> Entropy
+                    <input type="checkbox" name="attr_entropia" value="2"/> Entropia
                 </td>
                 <td>
-                    <input type="checkbox" name="attr_Primal" value="2"/> Primal
+                    <input type="checkbox" name="attr_espírito" value="2"/> Espírito
                 </td>
                 <td>
-                    <input type="checkbox" name="attr_Arcane_Lance" value="2"/> Arcane Lance
+                    <input type="checkbox" name="attr_lança_arcana" value="2"/> Lança Arcana
                 </td>
                 <td>
-                    <input type="checkbox" name="attr_Spirit" value="2"/> Spirit
+                    <input type="checkbox" name="attr_primal" value="2"/> Primal
                 </td>
             </tr>
         </table>
@@ -608,67 +608,67 @@
         <table class="sheet-spelltable">
             <tr>
                 <td class="blackbox_alternate">
-                    SPELL
+                    FEITIÇO
                 </td>
                 <td class="blackbox_alternate2">
-                    SCHOOL
+                    ESCOLA
                 </td>
                 <td class="blackbox_alternate2" style="width: 80px;">
-                    TYPE
+                    TIPO
                 </td>
                 <td class="blackbox_alternate2" style="width: 45px;">
-                    MANA COST
+                    CUSTO (MANA)
                 </td>
                 <td class="blackbox_alternate2" style="width: 100px;">
-                    CASTING TIME
+                    TEMPO
                 </td>
                 <td class="blackbox_alternate2">
-                    TN
+                    NA
                 </td>
                 <td class="blackbox_alternate2">
-                    TEST
+                    TESTE
                 </td>
                 <td class="blackbox_alternate2"></td>
             </tr>
             <tr>
                 <td>
-                    <input type="text" class="sheet-spelltext" name="attr_Spell_Name_Display"/>
+                    <input type="text" class="sheet-spelltext" name="attr_nome_do_feitiço_display"/>
                 </td>
                 <td>
-                    <select class="sheet-spellselect" name="attr_Spell_School_Display">
-                        <option value="@{Creation}">Creation</option>
-                        <option value="@{Entropy}">Entropy</option>
-                        <option value="@{Primal}">Primal</option>
-                        <option value="@{Spirit}">Spirit</option>
+                    <select class="sheet-spellselect" name="attr_escola_do_feitiço_display">
+                        <option value="@{criação}">Criação</option>
+                        <option value="@{entropia}">Entropia</option>
+                        <option value="@{espírito}">Espírito</option>
+                        <option value="@{primal}">Primal</option>
                     </select>
                 </td>
                 <td>
-                    <select class="sheet-spellselect2" name="attr_Spell_Type_Display">
-                        <option value="Attack">Attack</option>
-                        <option value="Defense">Defense</option>
-                        <option value="Enhance">Enhancement</option>
-                        <option value="Utility">Utility</option>
+                    <select class="sheet-spellselect2" name="attr_tipo_de_feitiço_display">
+                        <option value="ataque">Ataque</option>
+                        <option value="defesa">Defesa</option>
+                        <option value="melhoria">Melhoria</option>
+                        <option value="utilidade">Utilidade</option>
                     </select>
                 </td>
                 <td>
-                    <input type="number" class="sheet-manatext" name="attr_Spell_Cost_Display" value="0"/>
+                    <input type="number" class="sheet-manatext" name="attr_custo_do_feitiço_display" value="0" tittle="MANA"/>
                 </td>
                 <td>
-                    <input type="text" class="sheet-timetext" name="attr_Casting_Time_Display"/>
+                    <input type="text" class="sheet-timetext" name="attr_tempo_de_lançamento_display"/>
                 </td>
                 <td>
-                    <input type="number" class="sheet-natext" name="attr_Spell_TN_Display" value="0"/>
+                    <input type="number" class="sheet-natext" name="attr_número_alvo_display" value="0"/>
                 </td>
                 <td>
-                    <input type="text" class="sheet-vstext" name="attr_Vs_Test_Display"/>
+                    <input type="text" class="sheet-vstext" name="attr_teste_versus_display" title="Teste a ser feito pelo alvo"/>
                 </td>
                 <td rowspan="2">
-                    <button type='roll' value='/em @{character_name} uses @{Spell_Name_Display} to @{Spell_Type_Display}: [[3d6 + (@{Magic} + @{Spell_School_Display})]]' name='roll_Spell_Display'></button>
+                    <button type='roll' value='/em @{character_name} utiliza @{nome_do_feitiço_display} para @{tipo_de_feitiço_display}: [[3d6 + (@{magia} + @{escola_do_feitiço_display})]]' name='roll_lançar_feitiço_display'></button>
                 </td>
             </tr>
             <tr>
                 <td colspan="7">
-                    <textarea class="sheet-spelltext" name="attr_Effect_Display" placeholder="Spell Effect"></textarea>
+                    <textarea class="sheet-spelltext" name="attr_efeito_do_feitiço_display" placeholder="Efeito do Feitiço"></textarea>
                 </td>
             </tr>
         </table>
@@ -676,43 +676,43 @@
             <table class="sheet-spelltable">
                 <tr>
                     <td>
-                        <input type="text" class="sheet-spelltext" name="attr_Spell_Name"/>
+                        <input type="text" class="sheet-spelltext" name="attr_nome_do_feitiço"/>
                     </td>
                     <td>
-                        <select class="sheet-spellselect" name="attr_Spell_School">
-                            <option value="@{Creation}">Creation</option>
-                            <option value="@{Entropy}">Entropy</option>
-                            <option value="@{Primal}">Primal</option>
-                            <option value="@{Spirit}">Spirit</option>
+                        <select class="sheet-spellselect" name="attr_escola_do_feitiço">
+                            <option value="@{criação}">Criação</option>
+                            <option value="@{entropia}">Entropia</option>
+                            <option value="@{espírito}">Espírito</option>
+                            <option value="@{primal}">Primal</option>
                         </select>
                     </td>
                     <td>
-                        <select class="sheet-spellselect2" name="attr_Spell_Type">
-                            <option value="Attack">Attack</option>
-                            <option value="Defense">Defense</option>
-                            <option value="Enhance">Enhancement</option>
-                            <option value="Utility">Utility</option>
-                        </select>
+                        <select class="sheet-spellselect2" name="attr_tipo_de_feitiço">
+                        <option value="ataque">Ataque</option>
+                        <option value="defesa">Defesa</option>
+                        <option value="melhoria">Melhoria</option>
+                        <option value="utilidade">Utilidade</option>
+                    </select>
                     </td>
                     <td>
-                        <input type="number" class="sheet-manatext" name="attr_Spell_Cost" value="0"/>
+                        <input type="number" class="sheet-manatext" name="attr_custo_do_feitiço" value="0" tittle="MANA"/>
                     </td>
                     <td>
-                        <input type="text" class="sheet-timetext" name="attr_Casting_Time"/>
+                        <input type="text" class="sheet-timetext" name="attr_tempo_de_lançamento"/>
                     </td>
                     <td>
-                        <input type="number" class="sheet-natext" name="attr_Spell_TN" value="0"/>
+                        <input type="number" class="sheet-natext" name="attr_número_alvo" value="0"/>
                     </td>
                     <td>
-                        <input type="text" class="sheet-vstext" name="attr_Vs_Test"/>
+                        <input type="text" class="sheet-vstext" name="attr_teste_versu" tittle="Teste a ser feito pelo alvo"/>
                     </td>
                     <td rowspan="2">
-                        <button type='roll' value='/em @{character_name} uses @{Spell_Name} to @{Spell_Type}: [[3d6 + (@{Magic} + @{Spell_School})]]' name='roll_Spell'></button>
+                        <button type='roll' value='/em @{character_name} utiliza @{nome_do_feitiço} para @{tipo_de_feitiço}: [[3d6 + (@{magia} + @{escola_do_feitiço})]]' name='roll_lançar_feitiço'></button>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="7">
-                        <textarea class="sheet-spelltext" name="attr_Effect" placeholder="Spell Effect"></textarea>
+                        <textarea class="sheet-spelltext" name="attr_efeito_do_feitiço" placeholder="Efeito do Feitiço"></textarea>
                     </td>
                 </tr>
             </table>
@@ -725,7 +725,7 @@
             <table>
                 <tr>
                     <td class="blackbox">
-                        CHARACTER
+                        PERSONAGEM
                     </td>
                 </tr>
                 <tr>
@@ -739,12 +739,12 @@
             <table>
                 <tr>
                     <td class="blackbox">
-                        BACKGROUND
+                        HISTÓRICO
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input class="sheet-basicinfotextbox" type="text" name="attr_Levelcheck" value="@{character_background}" disabled />
+                        <input class="sheet-basicinfotextbox" type="text" name="attr_histórico_check" value="@{histórico}" disabled />
                     </td>
                 </tr>
             </table>
@@ -753,12 +753,12 @@
             <table>
                 <tr>
                     <td class="blackbox">
-                        CLASS
+                        CLASSE
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input class="sheet-basicinfotextbox" type="text" name="attr_Classcheck" value="@{Class}" disabled />
+                        <input class="sheet-basicinfotextbox" type="text" name="attr_classe_check" value="@{classe}" disabled />
                     </td>
                 </tr>
             </table>
@@ -767,12 +767,12 @@
             <table>
                 <tr>
                     <td class="blackbox">
-                        LEVEL
+                        NÍVEL
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input class="sheet-basicinfotextbox" type="number" name="attr_Levelcheck" value="@{Level}" disabled />
+                        <input class="sheet-basicinfotextbox" type="number" name="attr_nível_check" value="@{nível}" disabled />
                     </td>
                 </tr>
             </table>
@@ -783,12 +783,12 @@
         <table class="sheet-general">
             <tr>
                 <td class="blackbox_alternate">
-                    CONCEPT
+                    CONCEITO
                 </td>
             </tr>
             <tr>
                 <td>
-                    <textarea name="attr_Concept" class="sheet-concepttext"></textarea>
+                    <textarea name="attr_conceito" class="sheet-concepttext"></textarea>
                 </td>
             </tr>
         </table>
@@ -799,12 +799,12 @@
                 <table>
                     <tr>
                         <td class="blackbox_alternate">
-                            LANGUAGES
+                            IDIOMAS
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <textarea name="attr_Languages" class="sheet-goalstextsmall"></textarea>
+                            <textarea name="attr_idiomas" class="sheet-goalstextsmall"></textarea>
                         </td>
                     </tr>
                 </table>
@@ -813,12 +813,12 @@
                 <table>
                     <tr>
                         <td class="blackbox_alternate">
-                            GOALS
+                            OBJETIVOS
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <textarea name="attr_Goals" class="sheet-goalstext"></textarea>
+                            <textarea name="attr_objetivos" class="sheet-goalstext"></textarea>
                         </td>
                     </tr>
                 </table>
@@ -827,12 +827,12 @@
                 <table>
                     <tr>
                         <td class="blackbox_alternate">
-                            TIES AND FAMILY
+                            LIGAÇÕES & FAMÍLIA
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <textarea name="attr_Ties" class="sheet-tiestext"></textarea>
+                            <textarea name="attr_ligações" class="sheet-tiestext"></textarea>
                         </td>
                     </tr>
                 </table>
@@ -845,7 +845,7 @@
                         <table class="sheet-invTable">
                             <tr>
                                 <td class="blackbox_alternate2" colspan="2">
-                                    EQUIPMENTS
+                                    EQUIPAMENTOS
                                 </td>
                             </tr>
                             <tr>
@@ -853,15 +853,15 @@
                                     Item
                                 </td>
                                 <td>
-                                    Amount
+                                    Quantidade
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="text" name="attr_Inventory_Name_Display" class="sheet-InventoryName"/>
+                                    <input type="text" name="attr_nome_do_item_display" class="sheet-InventoryName"/>
                                 </td>
                                 <td>
-                                    x<input type="text" name="attr_Inventory_Amount_Display" class="sheet-InventoryAmount"/>
+                                    x<input type="text" name="attr_quantidade_display" class="sheet-InventoryAmount"/>
                                 </td>
                             </tr>
                         </table>
@@ -869,10 +869,10 @@
                             <table class="sheet-invTable">
                                 <tr>
                                     <td>
-                                        <input type="text" name="attr_Inventory_Name" class="sheet-InventoryName"/>
+                                        <input type="text" name="attr_nome_do_item" class="sheet-InventoryName"/>
                                     </td>
                                     <td>
-                                        x<input type="text" name="attr_Inventory_Amount" class="sheet-InventoryAmount"/>
+                                        x<input type="text" name="attr_quantidade_display" class="sheet-InventoryAmount"/>
                                     </td>
                                 </tr>
                             </table>
@@ -885,18 +885,18 @@
                     <table style="width: 220px; float: left">
                         <tr>
                             <td class="blackbox_alternate" colspan="3">
-                                MONEY
+                                DINHEIRO
                             </td>
                         </tr>
                         <tr>
                             <td class="sheet-circularmoney">
-                                <input type="text" class="sheet-circularmoneytext" name="attr_Copper_Pieces" Placeholder="CP"/>
+                                <input type="text" class="sheet-circularmoneytext" name="attr_peças_de_cobre" Placeholder="PC"/>
                             </td>
                             <td class="sheet-circularmoney">
-                                <input type="text" class="sheet-circularmoneytext" name="attr_Silver_Pieces" Placeholder="SP"/>
+                                <input type="text" class="sheet-circularmoneytext" name="attr_peças_de_prata" Placeholder="PP"/>
                             </td>
                             <td class="sheet-circularmoney">
-                                <input type="text" class="sheet-circularmoneytext" name="attr_Gold_Pieces" Placeholder="GP"/>
+                                <input type="text" class="sheet-circularmoneytext" name="attr_peças_de_ouro" Placeholder="PO"/>
                             </td>
                         </tr>
                     </table>
@@ -913,33 +913,33 @@
                 <table class="sheet-spelltable">
                     <tr>
                         <td class="blackbox_alternate" style="width: 150px">
-                            TALENT
+                            TALENTO
                         </td>
                         <td class="blackbox_alternate">
-                            LEVEL
+                            NÍVEL
                         </td>
                         <td class="blackbox_alternate">
-                            EFFECT
+                            EFEITO
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" name="attr_talent_name" class="sheet-talenttext"/>
+                            <input type="text" name="attr_nome_do_talento" class="sheet-talenttext"/>
                         </td>
                         <td rowspan="2">
                             <select name="attr_talent_level" class="sheet-talentselect">
-                                <option  value="Novice"selected>Novice</option>
-                                <option value="Journeyman">Journeyman</option>
-                                <option value="Master">Master</option>
+                                <option  value="novato"selected>Novato</option>
+                                <option value="experiente">Experiente</option>
+                                <option value="mestre">Mestre</option>
                             </select>
                         </td>
                         <td rowspan="2">
-                            <textarea name="attr_talent_effect" class="sheet-talentarea"></textarea>
+                            <textarea name="attr_efeito_do_talento" class="sheet-talentarea" placeholder="Descrição do Talento"></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Level Gained &nbsp;&nbsp;&nbsp;<input type="number" name="attr_talent_gained" class="sheet-talentnumber"/>
+                            Nível Adquirido &nbsp;&nbsp;&nbsp;<input type="number" name="attr_nível_adqurido" class="sheet-talentnumber" title="Qual Nível o Talento foi Adqurido?"/>
                         </td>
                     </tr>
                 </table>
